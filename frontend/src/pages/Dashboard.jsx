@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
@@ -51,62 +50,12 @@ function Dashboard() {
         fetchDashboardData();
     }, [navigate]);
 
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        navigate("/admin-login");
-    };
-
     return (
         <div className="min-h-screen bg-gray-50/50 text-gray-800">
 
-            {/* Header Bar */}
-            <header className="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-20">
-                <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-                    <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 bg-red-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm shadow-red-500/20">
-                            T
-                        </div>
-
-                        <div>
-                            <h1 className="text-xl font-extrabold text-gray-900 tracking-tight">
-                                TastyBites
-                            </h1>
-
-                            <p className="text-xs text-gray-400 font-medium">
-                                Admin Portal
-                            </p>
-                        </div>
-                    </div>
-
-                    <button
-                        onClick={handleLogout}
-                        className="flex items-center gap-2 bg-gray-50 hover:bg-red-50 text-gray-600 hover:text-red-600 border border-gray-200 hover:border-red-200 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200"
-                    >
-                        <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                            />
-                        </svg>
-
-                        Logout
-                    </button>
-
-                </div>
-            </header>
-
-            {/* Dashboard Hero Banner with Background Image */}
+            {/* Dashboard Hero Banner */}
             <div className="relative py-12 px-6 overflow-hidden bg-gray-900 shadow-xs">
-                
+
                 {/* Background Image */}
                 <img
                     src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop"
@@ -123,9 +72,11 @@ function Dashboard() {
                         <span className="inline-block px-3 py-1 mb-2 text-xs font-bold tracking-wider text-red-400 bg-red-950/60 rounded-full border border-red-500/30 backdrop-blur-md">
                             ADMIN OVERVIEW
                         </span>
+
                         <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                             Control Center & Management
                         </h2>
+
                         <p className="text-gray-300 text-sm mt-1 max-w-xl">
                             Monitor user registrations, inventory listings, and system operations in real time.
                         </p>
@@ -215,7 +166,7 @@ function Dashboard() {
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     strokeWidth="2"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332 1.253-4.5 1.253"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18 18.247 18 16.5 18c-1.746 0-3.332 1.253-4.5 1.253"
                                 />
                             </svg>
 
