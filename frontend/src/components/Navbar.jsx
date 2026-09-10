@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from "../assets/tastybites-logo.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -31,21 +32,13 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
 
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 bg-red-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm shadow-red-500/20 group-hover:scale-105 transition-transform duration-200">
-            T
-          </div>
-
-          <div>
-            <h1 className="text-xl font-extrabold text-gray-900 tracking-tight leading-none">
-              TastyBites
-            </h1>
-            <p className="text-[10px] text-gray-400 font-medium tracking-wide">
-              RESTAURANT
-            </p>
-          </div>
-        </Link>
-
+        <Link to="/" className="flex items-center">
+        <img
+         src={logo}
+         alt="TastyBites Restaurant"
+         className="w-52 h-16 object-contain"
+       />
+       </Link>
         {/* Guest Navbar */}
         {!user && (
           <div className="flex items-center gap-1.5 sm:gap-2">
